@@ -1,0 +1,140 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Student Registration Form</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      background-color: #f3f7fa;
+      margin: 40px;
+    }
+    h2 {
+      color: #333;
+    }
+    section {
+      background: #fff;
+      border-radius: 10px;
+      padding: 20px;
+      box-shadow: 0 0 8px rgba(0, 0, 0, 0.1);
+      margin-bottom: 30px;
+    }
+    label {
+      display: block;
+      margin-top: 10px;
+    }
+    input, select {
+      width: 100%;
+      padding: 8px;
+      margin-top: 4px;
+      border-radius: 6px;
+      border: 1px solid #ccc;
+    }
+    input:hover{ background-color: lightgrey;}
+    select:hover{ background-color: lightgrey;}
+    button {
+      background-color: #0078d7;
+      color: white;
+      padding: 10px 20px;
+      border: none;
+      border-radius: 6px;
+      cursor: pointer;
+      margin-top: 15px;
+    }
+    button:hover {
+      background-color: #005fa3;
+    }
+    #confirmation, #success {
+      display:none;
+    }
+    #success {
+      color: green;
+      font-weight: bold;
+      font-size: 18px;
+    }
+  </style>
+</head>
+<body>
+
+  <h2>Student Registration Form</h2>
+
+  <!-- Registration Section -->
+  <section id="registrationSection">
+    <label>Full Name:</label>
+    <input type="text" id="name" placeholder="Enter your name">
+
+    <label>Roll Number:</label>
+    <input type="text" id="roll" placeholder="Enter your roll number">
+
+    <label>Email:</label>
+    <input type="email" id="email" placeholder="Enter your email">
+
+    <label>Course:</label>
+    <select id="course">
+      <option value="">-- Select Course --</option>
+      <option>B.Tech CSE</option>
+      <option>B.Tech ECE</option>
+      <option>BCA</option>
+      <option>MCA</option>
+      <option>M.Tech</option>
+    </select>
+
+    <label>Gender:</label>
+    <input type="radio" name="gender" value="Male"> Male
+    <input type="radio" name="gender" value="Female"> Female
+    <input type="radio" name="gender" value="Other"> Other
+
+    <br><br>
+    <button onclick="showConfirmation()">Preview Details</button>
+  </section>
+
+  <!-- Confirmation Section -->
+  <section id="confirmation">
+    <h3>Confirm Your Details</h3>
+    <p><b>Name:</b> <span id="confirmName"></span></p>
+    <p><b>Roll No:</b> <span id="confirmRoll"></span></p>
+    <p><b>Email:</b> <span id="confirmEmail"></span></p>
+    <p><b>Course:</b> <span id="confirmCourse"></span></p>
+    <p><b>Gender:</b> <span id="confirmGender"></span></p>
+
+    <button onclick="registerStudent()">Confirm & Register</button>
+  </section>
+
+  <p id="success">✅ Registration Successful!</p>
+
+  <script>
+    function showConfirmation() {
+      let name = document.getElementById("name").value.trim();
+      let roll = document.getElementById("roll").value.trim();
+      let email = document.getElementById("email").value.trim();
+      let course = document.getElementById("course").value;
+      let gender = document.querySelector('input[name="gender"]:checked');
+
+      // validation
+      if (!name || !roll || !email || !course || !gender) {
+        alert("Please fill all fields before previewing.");
+        return;
+      }
+
+      // hide registration section
+      document.getElementById("registrationSection").style.display = "none";
+
+      // display confirmation section
+      document.getElementById("confirmName").textContent = name;
+      document.getElementById("confirmRoll").textContent = roll;
+      document.getElementById("confirmEmail").textContent = email;
+      document.getElementById("confirmCourse").textContent = course;
+      document.getElementById("confirmGender").textContent = gender.value;
+
+      document.getElementById("confirmation").style.display = "block";
+    }
+
+    function registerStudent() {
+      document.getElementById("confirmation").style.display = "none";
+      document.getElementById("success").style.display = "block";
+    }
+  </script>
+
+</body>
+</html>

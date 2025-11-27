@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>JS EVENT</title>
+</head>
+<body>
+    <form onsubmit="return submitAGE()" onreset="resetAGE()">
+
+        Enter AGE:<input step="0.00001" type="number" onfocus="txtFocus()" onblur="txtBlur()" oninput="oninputFun(this)" min="18" >
+        <select name="" id="" onchange="selchange()" oninvalid="txtValid()">
+            <option value="">Male</option>
+            <option value="">Female</option>
+        </select>
+        <input type="submit" >
+        <input type="reset">
+    </form>
+    <p id="msg"></p>
+    <script>
+        function submitAGE(){
+
+            document.getElementById("msg").innerHTML = "Form sub"
+            return false
+        }
+        function resetAGE(){
+            document.getElementById("msg").innerHTML = "Form res"
+            return false
+            
+        }
+        function txtFocus(){
+            document.getElementById("msg").innerHTML = "U Can Start"
+            return false
+
+        }
+        
+        // function txtBlur(){
+        //     document.getElementById("msg").innerHTML = "BLUR>>>>>>>>>>>>>>>>>>>>>>>>>>>>>"
+        //     return false
+
+        // }
+
+        function txtValid(){
+            document.getElementById("msg").innerHTML = "less 18 >>><<<"
+            return false
+
+        }
+        
+        function selchange(){
+            document.getElementById("msg").innerHTML = "Changed gender to"
+            return false
+
+        }
+        function oninputFun(dd){
+            document.getElementById("msg").innerHTML = dd.value
+ 
+        }
+    </script>
+</body>
+</html>

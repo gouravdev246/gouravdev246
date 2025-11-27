@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>01JS</title>
+</head>
+<body>
+    <p id="demo"> Good</p>
+    <p id="car"></p>
+    <button type="button" onclick="myFunction()">Click Me</button>
+
+    
+</body>
+<script>
+
+    // let a = prompt('enter a number:')
+    // let b = prompt('enter another number:')
+    // let c = Number(a) + Number(b)
+    // alert(c)
+    // console.log(c)
+    function myFunction(){
+        document.getElementById("demo").innerHTML = Date()
+    }
+    const car = [1 , 2 , 3 , 4 , 5]
+    for (let i = 0; i < car.length; i++) {
+        document.getElementById("car").innerHTML += car[i] + "<br>";
+    }
+    
+</script>
+</html>
