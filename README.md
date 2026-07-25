@@ -1,5 +1,5 @@
 # 💫 About Me:
- Hi, I’m Gourav 👨‍💻<br><br>B.Tech CSE Student at Lovely Professional University (LPU)<br>Currently learning MERN Stack (MongoDB, Express, React, Node.js) <br>Freelancing with Vibe Coding – building real-world web apps
+ Hi, I’m Gourav 👨‍💻<br><br>B.Tech CSE Student at Lovely Professional University (LPU)<br> MERN Stack (MongoDB, Express, React, Node.js) Developer <br>Freelancing with Vibe Coding – building real-world web apps
 
 
 ## 🌐 Socials:
